@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="style/document.css"/>
+  <link rel="stylesheet" href="style/form.css"/>
+  <link rel="stylesheet" href="style/grid.css"/>
+  <link rel="stylesheet" href="style/read_only_pane.css"/>
+  <script src="scripts/load_image.js"></script>
+  <script>
+    function on_load() {
+      document.querySelector("#column_number").addEventListener("change", update_grid);
+      document.querySelector("#row_number").addEventListener("change", update_grid);
+      update();
+    }
+
+    function update() {
+      update_grid();
+      update_json();
+    }
+
+    function update_grid() {
+      // Extract and fix input values
+      let column_number_element = document.querySelector("#column_number");
+      let column_number = Math.round(column_number_element.value);
+      column_number_element.value = column_number;
+
+      let row_number_element = document.querySelector("#row_number");
+      let row_number = Math.round(row_number_element.value);
+      row_number_element.value = row_number;
+
+      let grid_element = document.querySelectorAll("#grid")[0];
+
+      grid_element.removeAttribute("tiles");
+      while (grid_element.firstChild) {
+        grid_element.removeChild(grid_element.firstChild);
+      }
+
+      let tiles = [];
+      for (let row = 0; row < row_number; row++) {
+        let row_element = document.createElement("div");
+        row_element.classList.add("row");
+
+        for (let column = 0; column < column_number; column++) {
+          let tile_element = document.createElement("div");
+          tile_element.classList.add("tile");
+          tiles.push(tile_element);
+
+          row_element.appendChild(tile_element);
+        }
+
+        grid_element.appendChild(row_element);
+      }
+    }
+
+    function update_json() {
+
+    }
+
+    window.addEventListener("load", on_load);
+  </script>
+  <style>
+    #editor {
+      height: fit-content;
+      width: 100%;
+
+      position: relative;
+    }
+
+    #editor>* {
+      height: 100%;
+      width: 100%;
+
+      position: absolute;
+      top: 0;
+    }
+
+    #editor>#default_background {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #editor>#grid .tile {
+      cursor: pointer;
+    }
+
+    #editor>#grid .tile.blocked {
+      background-color: #F4433640;
+      cursor: pointer;
+    }
+
+    #editor>img {
+      position: relative;
+
+      opacity: 0;
+    }
+
+    #stage_json {
+      width: 100%;
+
+      padding: 1em;
+    }
+  </style>
+  <title>Title</title>
+</head>
+<body>
+  <div id="main">
+    <h2>Stage specifications</h2>
+    <form class="box">
+
+      <!--
+      <div class="row">
+        <label for="number">Number</label>
+        <span class="spacer"></span>
+        <input type="number" id="number" min="1" step="1" value="1"/>
+      </div>
+
+      <div class="row">
+        <label for="name">Name</label>
+        <span class="spacer"></span>
+        <input type="text" id="name" value="Name"/>
+      </div>
+      !-->
+
+      <div class="row">
+        <label for="column_number">Columns</label>
+        <span class="spacer"></span>
+        <input type="number" id="column_number" min="1" step="1" value="1"/>
+      </div>
+
+      <div class="row">
+        <label for="row_number">Rows</label>
+        <span class="spacer"></span>
+        <input type="number" id="row_number" min="1" step="1" value="1"/>
+      </div>
+
+      <!--
+      <div class="row">
+        <label for="row_number">Load stage</label>
+        <span class="spacer"></span>
+        <input type="file" id="stage_file"/>
+        <span class="spacer"></span>
+        <input type="button" id="stage_file_load" value="Load"/>
+      </div>
+      !-->
+
+    </form>
+
+    <h2>Stage editor</h2>
+    <form class="box">
+      <div class="row">
+        <label for="row_number">Background image</label>
+        <span class="spacer"></span>
+        <input type="file" id="image_file" min="1" step="1" value="1"/>
+      </div>
+    </form>
+
+    <div id="editor">
+      <div id="default_background" class="read_only_pane">Your image will go here.</div>
+      <img id="grid_background" src="#" alt="grid background" style="padding-top: 10%;"/>
+      <div id="grid" class="grid">
+      </div>
+    </div>
+
+    <h2>Stage JSON</h2>
+    <div id="stage_json" class="read_only_pane"></div>
+  </div>
+</body>
+</html>

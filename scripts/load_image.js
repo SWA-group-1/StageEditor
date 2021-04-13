@@ -1,0 +1,20 @@
+function add_image_file_change_listener() {
+  let button_element = document.querySelectorAll("#image_file")[0];
+  button_element.addEventListener("change", change_image);
+}
+
+function change_image() {
+  let image_file_element = document.querySelectorAll("#image_file")[0];
+  if (!image_file_element.files || !image_file_element.files[0]) {
+    return;
+  }
+
+  let reader = new FileReader();
+  let url = reader.readAsDataURL(image_file_element.files[0]);
+
+  let grid_background_element = document.querySelectorAll("#grid_background")[0];
+  grid_background_element.src = url;
+  grid_background_element.style.opacity = "1.0";
+}
+
+window.addEventListener("load", add_image_file_change_listener);

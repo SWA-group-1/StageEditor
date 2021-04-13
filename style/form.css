@@ -1,0 +1,18 @@
+.box {
+  width: fit-content;
+}
+
+.box>.row {
+  width: 100%;
+
+  margin-bottom: 1em;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.box>.row>.spacer {
+  min-width: 1em;
+
+  flex-grow: 1;
+}

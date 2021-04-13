@@ -1,0 +1,21 @@
+.grid {
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.grid>.row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  flex-grow: 1;
+}
+
+.grid>.row>.tile {
+  border: 1px solid black;
+
+  flex-grow: 1;
+}
