@@ -3,20 +3,23 @@ function add_grid_listeners() {
     document.querySelector("#row_number").addEventListener("change", update_grid);
 
     let grid_element = document.querySelector("#grid");
-    grid_element.clicked = false;
+    grid_element.painting = false;
+    grid_element.paint_blocked = false;
     grid_element.addEventListener("mousedown", function (event) {
-        if (!event.target.classList.contains("tile")) {
-            return;
-        }
-
-        grid_element.clicked = !grid_element.clicked;
+        grid_element.painting = true;
         grid_element.paint_blocked = !event.target.classList.contains("blocked");
+        color_tile(grid_element, event.target);
+    });
+    grid_element.addEventListener("mouseleave", function (event) {
+        grid_element.painting = false;
+    });
+    grid_element.addEventListener("mouseup", function (event) {
+        grid_element.painting = false;
     });
 }
 
 function color_tile(grid_element, tile_element) {
-    if (grid_element.clicked) {
-        console.log(tile_element);
+    if (grid_element.painting) {
         if (grid_element.paint_blocked) {
             tile_element.classList.add("blocked");
         } else {
@@ -50,9 +53,8 @@ function update_grid() {
             let tile_element = document.createElement("div");
             tile_element.classList.add("tile");
             tile_element.addEventListener("mouseenter", function (event) {
-                color_tile(grid_element, event.target)
+                color_tile(grid_element, event.target);
             });
-            color_tile(grid_element, tile_element);
             tiles.push(tile_element);
 
             row_element.appendChild(tile_element);
