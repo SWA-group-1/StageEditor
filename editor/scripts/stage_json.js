@@ -8,8 +8,8 @@ function update_json() {
 
   text += `\t"Number": ${Math.round(document.querySelectorAll("#number")[0].value)},\n`;
   text += `\t"Name": "${document.querySelectorAll("#name")[0].value}",\n`;
-  text += `\t"XSize": "${column_number}",\n`;
-  text += `\t"YSize": "${row_number}",\n`;
+  text += `\t"XSize": ${column_number},\n`;
+  text += `\t"YSize": ${row_number},\n`;
 
   text += `\t"BlockedTiles": [\n`;
   let tiles = grid_element.tiles;
