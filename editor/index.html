@@ -62,6 +62,9 @@
       width: 100%;
 
       padding: 1em;
+
+      white-space: pre;
+      user-select: text;
     }
   </style>
   <title>Title</title>
@@ -71,7 +74,6 @@
     <h2>Stage specifications</h2>
     <form class="box">
 
-      <!--
       <div class="row">
         <label for="number">Number</label>
         <span class="spacer"></span>
@@ -83,7 +85,6 @@
         <span class="spacer"></span>
         <input type="text" id="name" value="Name"/>
       </div>
-      !-->
 
       <div class="row">
         <label for="column_number">Columns</label>
@@ -97,7 +98,6 @@
         <input type="number" id="row_number" min="1" step="1" value="1"/>
       </div>
 
-      <!--
       <div class="row">
         <label for="row_number">Load stage</label>
         <span class="spacer"></span>
@@ -105,14 +105,13 @@
         <span class="spacer"></span>
         <input type="button" id="stage_file_load" value="Load"/>
       </div>
-      !-->
 
     </form>
 
     <h2>Stage editor</h2>
     <form class="box">
       <div class="row">
-        <label for="row_number">Background image</label>
+        <label for="image_file">Background image</label>
         <span class="spacer"></span>
         <input type="file" id="image_file" min="1" step="1" value="1"/>
       </div>
