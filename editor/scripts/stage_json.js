@@ -25,9 +25,9 @@ function update_json() {
     text += `\t\t{ "X": ${Math.round(x)}, "Y": ${Math.round(y)} },\n`;
   }
   if (contains_blocked_tiles) {
-    text = text.substring(0, text.length - 2);
+    text = text.slice(0, -2) + "\n";
   }
-  text += `\n\t],\n`;
+  text += `\t],\n`;
   text += `}`;
 
   stage_json_element.innerText = text;
