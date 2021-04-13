@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="style/form.css"/>
   <link rel="stylesheet" href="style/grid.css"/>
   <link rel="stylesheet" href="style/read_only_pane.css"/>
+  <script src="scripts/download.js"></script>
   <script src="scripts/editor_grid.js"></script>
   <script src="scripts/load_image.js"></script>
   <script src="scripts/stage_json.js"></script>
@@ -125,6 +126,11 @@
     </div>
 
     <h2>Stage JSON</h2>
+    <form class="box">
+      <div class="row">
+        <input type="button" id="download" value="Download"/>
+      </div>
+    </form>
     <div id="stage_json" class="read_only_pane"></div>
   </div>
 </body>
