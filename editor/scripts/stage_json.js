@@ -32,8 +32,3 @@ function update_json() {
 
   stage_json_element.innerText = text;
 }
-
-window.addEventListener("load", function () {
-  document.querySelectorAll("#number")[0].addEventListener("change", update_json);
-  document.querySelectorAll("#name")[0].addEventListener("change", update_json);
-});

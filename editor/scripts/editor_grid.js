@@ -1,25 +1,3 @@
-function add_grid_listeners() {
-  document.querySelector("#column_number").addEventListener("change", update_grid);
-  document.querySelector("#row_number").addEventListener("change", update_grid);
-
-  let grid_element = document.querySelector("#grid");
-  grid_element.painting = false;
-  grid_element.paint_blocked = false;
-  grid_element.addEventListener("mousedown", function (event) {
-    grid_element.painting = true;
-    grid_element.paint_blocked = !event.target.classList.contains("blocked");
-    color_tile(grid_element, event.target);
-  });
-  grid_element.addEventListener("mouseleave", function (event) {
-    grid_element.painting = false;
-    update_json();
-  });
-  grid_element.addEventListener("mouseup", function (event) {
-    grid_element.painting = false;
-    update_json();
-  });
-}
-
 function color_tile(grid_element, tile_element) {
   if (grid_element.painting) {
     if (grid_element.paint_blocked) {
@@ -67,4 +45,21 @@ function update_grid() {
   grid_element.tiles = tiles;
 }
 
-window.addEventListener("load", add_grid_listeners);
+window.addEventListener("load", function () {
+  let grid_element = document.querySelector("#grid");
+  grid_element.painting = false;
+  grid_element.paint_blocked = false;
+  grid_element.addEventListener("mousedown", function (event) {
+    grid_element.painting = true;
+    grid_element.paint_blocked = !event.target.classList.contains("blocked");
+    color_tile(grid_element, event.target);
+  });
+  grid_element.addEventListener("mouseleave", function (event) {
+    grid_element.painting = false;
+    update_json();
+  });
+  grid_element.addEventListener("mouseup", function (event) {
+    grid_element.painting = false;
+    update_json();
+  });
+});

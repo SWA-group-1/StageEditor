@@ -1,4 +1,4 @@
-function add_download_listener() {
+window.addEventListener("load", function () {
   const hidden_link_element = document.createElement("a");
   hidden_link_element.style.display = "none";
   document.body.appendChild(hidden_link_element);
@@ -24,6 +24,4 @@ function add_download_listener() {
 
     save_data(stage_json_element.innerText, file_name);
   })
-}
-
-window.addEventListener("load", add_download_listener);
+});
