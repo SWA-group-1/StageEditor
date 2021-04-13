@@ -6,11 +6,11 @@
   <link rel="stylesheet" href="style/form.css"/>
   <link rel="stylesheet" href="style/grid.css"/>
   <link rel="stylesheet" href="style/read_only_pane.css"/>
+  <script src="scripts/editor_grid.js"></script>
   <script src="scripts/load_image.js"></script>
+  <script src="scripts/stage_json.js"></script>
   <script>
-    function on_load() {
-      document.querySelector("#column_number").addEventListener("change", update_grid);
-      document.querySelector("#row_number").addEventListener("change", update_grid);
+    function main() {
       update();
     }
 
@@ -19,45 +19,7 @@
       update_json();
     }
 
-    function update_grid() {
-      // Extract and fix input values
-      let column_number_element = document.querySelector("#column_number");
-      let column_number = Math.round(column_number_element.value);
-      column_number_element.value = column_number;
-
-      let row_number_element = document.querySelector("#row_number");
-      let row_number = Math.round(row_number_element.value);
-      row_number_element.value = row_number;
-
-      let grid_element = document.querySelectorAll("#grid")[0];
-
-      grid_element.removeAttribute("tiles");
-      while (grid_element.firstChild) {
-        grid_element.removeChild(grid_element.firstChild);
-      }
-
-      let tiles = [];
-      for (let row = 0; row < row_number; row++) {
-        let row_element = document.createElement("div");
-        row_element.classList.add("row");
-
-        for (let column = 0; column < column_number; column++) {
-          let tile_element = document.createElement("div");
-          tile_element.classList.add("tile");
-          tiles.push(tile_element);
-
-          row_element.appendChild(tile_element);
-        }
-
-        grid_element.appendChild(row_element);
-      }
-    }
-
-    function update_json() {
-
-    }
-
-    window.addEventListener("load", on_load);
+    window.addEventListener("load", main);
   </script>
   <style>
     #editor {
