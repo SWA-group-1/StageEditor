@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="style/form.css"/>
   <link rel="stylesheet" href="style/grid.css"/>
   <link rel="stylesheet" href="style/read_only_pane.css"/>
+  <script src="scripts/brush.js"></script>
   <script src="scripts/download.js"></script>
-  <script src="scripts/editor_grid.js"></script>
+  <script src="scripts/grid.js"></script>
   <script src="scripts/input_validation.js"></script>
   <script src="scripts/load_image.js"></script>
+  <script src="scripts/path.js"></script>
   <script src="scripts/stage_json.js"></script>
   <script>
     function main() {
@@ -29,15 +31,20 @@
       height: fit-content;
       width: 100%;
 
+      padding: 100px 100px 96px 100px;
+
       position: relative;
+
+      background-color: #424242;
     }
 
     #editor>* {
-      height: 100%;
-      width: 100%;
+      height: calc(100% - 200px);
+      width: calc(100% - 200px);
 
       position: absolute;
-      top: 0;
+      left: 100px;
+      top: 100px;
     }
 
     #editor>#default_background {
@@ -50,15 +57,27 @@
       cursor: pointer;
     }
 
-    #editor>#grid .tile.blocked {
-      background-color: #F4433680;
-      cursor: pointer;
-    }
-
     #editor>img {
+      width: 100%;
+      height: 100%;
+
       position: relative;
+      left: 0;
+      top: 0;
 
       opacity: 0;
+    }
+
+    #editor>#grid .tile.blocked {
+        background-color: #F4433680;
+    }
+
+    #editor>#path_display {
+        height: 100%;
+        width: 100%;
+
+        left: 0;
+        top: 0;
     }
 
     #stage_json {
@@ -79,7 +98,7 @@
       <div class="row">
         <label for="number">Number</label>
         <span class="spacer"></span>
-        <input type="number" id="number" min="1" max="999" step="1" value="1"/>
+        <input type="number" id="number" min="1" max="999" step="1" value="1" autofocus/>
       </div>
 
       <div class="row">
@@ -119,13 +138,22 @@
         <span class="spacer"></span>
         <input type="file" id="image_file" min="1" step="1" value="1"/>
       </div>
+
+      <div class="row">
+        <label for="brush_mode">Select a brush mode</label>
+        <span class="spacer"></span>
+        <select name="mode" id="brush_mode">
+          <option value="blocked_tiles">Blocked tiles</option>
+          <option value="path_points">Point path</option>
+        </select>
+      </div>
     </form>
 
     <div id="editor">
       <div id="default_background" class="read_only_pane">Your image will go here.</div>
-      <img id="grid_background" src="#" alt="grid background" style="padding-top: 10%;"/>
-      <div id="grid" class="grid">
-      </div>
+      <img id="grid_background" src="#" alt="grid background" style="padding-top: 50%;"/>
+      <div id="grid" class="grid"></div>
+      <canvas id="path_display"></canvas>
     </div>
 
     <h2>Stage JSON</h2>

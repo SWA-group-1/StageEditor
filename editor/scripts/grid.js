@@ -9,14 +9,9 @@ function color_tile(grid_element, tile_element) {
 }
 
 function update_grid() {
-  // Extract and fix input values
-  let column_number_element = document.querySelector("#column_number");
-  let column_number = Math.round(column_number_element.value);
-  column_number_element.value = column_number;
-
-  let row_number_element = document.querySelector("#row_number");
-  let row_number = Math.round(row_number_element.value);
-  row_number_element.value = row_number;
+  // Extract input values
+  let column_number = document.querySelectorAll("#column_number")[0].value;
+  let row_number = document.querySelectorAll("#row_number")[0].value;
 
   let grid_element = document.querySelectorAll("#grid")[0];
 
