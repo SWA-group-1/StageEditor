@@ -17,6 +17,7 @@ function change_image() {
     grid_background_element.src = reader.result;
     grid_background_element.style.opacity = "1.0";
     grid_background_element.style.padding = "0";
+    update_path();
   });
 }
 

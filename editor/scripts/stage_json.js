@@ -28,6 +28,18 @@ function update_json() {
     text = text.slice(0, -2) + "\n";
   }
   text += `\t],\n`;
+
+  text += `\t"PathPoints": [\n`;
+  let contains_path_points = false;
+  for (let i = 0; i < path_points.length; i++) {
+    contains_path_points = true;
+    text += `\t\t{ "X": ${path_points[i].x}, "Y": ${path_points[i].y} },\n`
+  }
+  if (contains_path_points) {
+    text = text.slice(0, -2) + "\n";
+  }
+  text += `\t]\n`;
+
   text += `}`;
 
   stage_json_element.innerText = text;

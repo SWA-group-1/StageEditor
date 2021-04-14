@@ -22,12 +22,12 @@ window.addEventListener("load", function () {
   const column_number_element = document.querySelectorAll("#column_number")[0];
   column_number_element.addEventListener(
       "change",
-      integer_restriction(column_number_element, 1, 255, update_grid),
+      integer_restriction(column_number_element, 1, 255, update),
   );
 
   const row_number_element = document.querySelectorAll("#row_number")[0];
   row_number_element.addEventListener(
       "change",
-      integer_restriction(row_number_element, 1, 255, update_grid),
+      integer_restriction(row_number_element, 1, 255, update),
   );
 });
