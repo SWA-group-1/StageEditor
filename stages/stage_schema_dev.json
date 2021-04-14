@@ -39,8 +39,8 @@
 				"description": "One point that the path passes through.",
 				"type": "object",
 				"properties": {
-					"X": { "type": "float" },
-					"Y": { "type": "float" }
+					"X": { "type": "number" },
+					"Y": { "type": "number" }
 				},
 				"required": [ "X", "Y" ]
 			}
