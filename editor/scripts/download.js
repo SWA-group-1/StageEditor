@@ -20,7 +20,7 @@ window.addEventListener("load", function () {
       return;
     }
 
-    let file_name = `stage_${stage_number.toString().padStart(3, "0")}.json`;
+    let file_name = `stage_${stage_number.toString().padStart(3, "0")}_dev.json`;
 
     save_data(stage_json_element.innerText, file_name);
   })
