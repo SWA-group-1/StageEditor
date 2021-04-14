@@ -14,7 +14,6 @@ window.addEventListener("load", function () {
   const point_size = 7.5;
   const context = path_display_element.getContext("2d");
 
-  let dragging = false;
   let dragging_info = null;
   let tile_width;
   let tile_height;
@@ -26,20 +25,39 @@ window.addEventListener("load", function () {
     path_points = [];
     update_path();
   };
+  function end_drag() {
+    if (dragging_info) {
+      dragging_info = null;
+
+      update_path();
+      update_json();
+    }
+  }
+  function get_square_distance(first, second) {
+    let delta_x = (first.x - second.x) * tile_width;
+    let delta_y = (first.y - second.y) * tile_height;
+    return delta_x * delta_x + delta_y * delta_y;
+  }
+  function get_dragging_info(index) {
+    return {
+      index: index,
+    };
+  }
   function get_near_point(point) {
-    let best_distance_square = Infinity;
+    let best_square_distance = Infinity;
     let best_index = -1;
     for (let i = 0; i < path_points.length; i++) {
-      let delta_x = (point.x - path_points[i].x) * tile_width;
-      let delta_y = (point.y - path_points[i].y) * tile_height;
-      let distance_square = delta_x * delta_x + delta_y * delta_y;
-      if (distance_square < best_distance_square) {
-        best_distance_square = distance_square;
+      let square_distance = get_square_distance(point, path_points[i]);
+      if (square_distance < best_square_distance) {
+        best_square_distance = square_distance;
         best_index = i;
       }
     }
 
-    return best_distance_square < near_square ? best_index : -1;
+    return {
+      square_distance: best_square_distance,
+      index: best_index,
+    };
   }
   function get_tile_point(clientX, clientY) {
     let canvas_rect = path_display_element.getBoundingClientRect()
@@ -90,24 +108,73 @@ window.addEventListener("load", function () {
     }
   };
 
-  path_display_element.addEventListener("click", function (event) {
+  path_display_element.addEventListener("mousedown", function (event) {
+    path_resize_window();
     let tile_point = get_tile_point(event.clientX, event.clientY);
-    let near_point_index = get_near_point(tile_point);
-    if (near_point_index === -1) {
+
+    if (path_points.length === 0) {
       path_points.push(tile_point);
-    } else {
-      path_points.splice(near_point_index, 1);
+      dragging_info = get_dragging_info(0);
+      update_path();
+      return;
     }
 
+    let near_point = get_near_point(tile_point);
+    if (near_point.square_distance < near_square) {
+      path_points.splice(near_point.index, 1);
+      update_path();
+      update_json();
+      return;
+    }
+
+    // Find neighbors.
+    let lower, upper;
+    if (0 < near_point.index) {
+      lower = path_points[near_point.index - 1];
+    }
+    if (near_point.index < path_points.length - 1) {
+      upper = path_points[near_point.index + 1];
+    }
+
+    // Different things depending on neighbors
+    if (lower) {
+      if (upper) {
+        // In the path
+        let sd = get_square_distance
+        let near = path_points[near_point.index];
+        let normalized_lower = (sd(lower, tile_point) + sd(tile_point, near)) / sd(lower, near);
+        let normalized_upper =  (sd(near, tile_point) + sd(tile_point, upper)) / sd(near, upper);
+        if (normalized_lower < normalized_upper) {
+          path_points.splice(near_point.index, 0, tile_point);
+          dragging_info = get_dragging_info(near_point.index);
+        } else {
+          path_points.splice(near_point.index + 1, 0, tile_point);
+          dragging_info = get_dragging_info(near_point.index + 1);
+        }
+      } else {
+        // Tail
+        path_points.push(tile_point);
+        dragging_info = get_dragging_info(near_point.index + 1);
+      }
+    } else {
+      if (upper) {
+        // Head
+        path_points.splice(0, 0, tile_point);
+        dragging_info = get_dragging_info(0);
+      } else {
+        // Single point
+        path_points.push(tile_point);
+        dragging_info = get_dragging_info(1);
+      }
+    }
     update_path();
-    update_json();
   });
-  path_display_element.addEventListener("mouseleave", function () {
-    dragging = false;
-    dragging_info = null;
+  path_display_element.addEventListener("mousemove", function(event) {
+    if (dragging_info) {
+      path_points[dragging_info.index] = get_tile_point(event.clientX, event.clientY);
+      update_path();
+    }
   });
-  path_display_element.addEventListener("mouseup", function () {
-    dragging = false;
-    dragging_info = null;
-  });
+  path_display_element.addEventListener("mouseup", end_drag);
+  path_display_element.addEventListener("mouseleave", end_drag);
 });
