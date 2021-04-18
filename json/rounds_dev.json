@@ -1,0 +1,64 @@
+{
+	"Rounds": [
+		[
+			{
+				"EnemyType": "Basic",
+				"Count": 20,
+				"DeltaTime": 0.5
+			}
+		],
+		[
+			{
+				"EnemyType": "Fast",
+				"Count": 20,
+				"DeltaTime": 0.75
+			},
+			{
+				"EnemyType": "None",
+				"Count": 1,
+				"DeltaTime": 5.0
+			},
+			{
+				"EnemyType": "Basic",
+				"Count": 10,
+				"DeltaTime": 1.0
+			}
+		],
+		[
+			{
+				"EnemyType": "Tanky",
+				"Count": 10,
+				"DeltaTime": 1.0
+			},
+			{
+				"EnemyType": "Basic",
+				"Count": 30,
+				"DeltaTime": 0.75
+			}
+		],
+    [
+      {
+        "EnemyType": "Tanky",
+        "Count": 10,
+        "DeltaTime": 1.0
+      },
+      {
+        "EnemyType": "None",
+        "Count": 1,
+        "DeltaTime": 2.5
+      },
+      {
+        "EnemyType": "Fast",
+        "Count": 30,
+        "DeltaTime": 0.75
+      }
+    ],
+    [
+      {
+        "EnemyType": "Metal",
+        "Count": 3,
+        "DeltaTime": 1.0
+      }
+    ]
+  ]
+}
