@@ -1,0 +1,44 @@
+{
+	"Towers": [
+		{
+			"Description": "Antiviral Drug Doctor",
+			"MediumCost": 140,
+			"ProjectileSpeed": 3.5,
+			"ProjectileSpriteNumber": 101,
+			"Range": 3,
+			"ReloadTime": 1.5,
+			"TowerSpriteNumber": 100,
+			"TypeNumber": 1
+		},
+		{
+			"Description": "Vaccine Nurse",
+			"MediumCost": 300,
+			"ProjectileSpeed": 5,
+			"ProjectileSpriteNumber": 103,
+			"Range": 5,
+			"ReloadTime": 1,
+			"TowerSpriteNumber": 102,
+			"TypeNumber": 2
+		},
+		{
+			"Description": "Hand Sanitizer Dispenser",
+			"MediumCost": 400,
+			"ProjectileSpeed": 2,
+			"ProjectileSpriteNumber": 105,
+			"Range": 4,
+			"ReloadTime": 2,
+			"TowerSpriteNumber": 104,
+			"TypeNumber": 3
+		},
+		{
+			"Description": "Government",
+			"MediumCost": 400,
+			"ProjectileSpeed": 4,
+			"ProjectileSpriteNumber": 107,
+			"Range": 10,
+			"ReloadTime": 1.5,
+			"TowerSpriteNumber": 106,
+			"TypeNumber": 4
+		}
+	]
+}
