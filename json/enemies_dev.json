@@ -30,6 +30,7 @@
 		{
 			"Name": "Metal",
 			"Health": 3,
+			"Speed": 1.0,
 			"SpriteSet": {
 				"FirstSprite": 15,
 				"Sprites": 3

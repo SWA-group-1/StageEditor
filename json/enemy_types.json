@@ -1,1 +1,0 @@
-{"EnemyTypes":[{"Name":"Basic","Health":1,"Speed":1.0,"SpriteSet":{"FirstSprite":0,"Sprites":1}},{"Name":"Fast","Health":2,"Speed":3.0,"SpriteSet":{"FirstSprite":5,"Sprites":2}},{"Name":"Tanky","Health":5,"Speed":0.75,"SpriteSet":{"FirstSprite":10,"Sprites":5}},{"Name":"Metal","Health":3,"SpriteSet":{"FirstSprite":15,"Sprites":3}}]}
