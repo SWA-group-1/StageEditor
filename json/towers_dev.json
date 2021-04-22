@@ -8,7 +8,7 @@
 			"Range": 3,
 			"ReloadTime": 1.5,
 			"TowerSpriteNumber": 100,
-			"TypeNumber": 1
+			"TypeNumber": 0
 		},
 		{
 			"Description": "Vaccine Nurse",
@@ -18,7 +18,7 @@
 			"Range": 5,
 			"ReloadTime": 1,
 			"TowerSpriteNumber": 102,
-			"TypeNumber": 2
+			"TypeNumber": 1
 		},
 		{
 			"Description": "Hand Sanitizer Dispenser",
@@ -28,7 +28,7 @@
 			"Range": 4,
 			"ReloadTime": 2,
 			"TowerSpriteNumber": 104,
-			"TypeNumber": 3
+			"TypeNumber": 2
 		},
 		{
 			"Description": "Government",
@@ -38,7 +38,7 @@
 			"Range": 10,
 			"ReloadTime": 1.5,
 			"TowerSpriteNumber": 106,
-			"TypeNumber": 4
+			"TypeNumber": 3
 		}
 	]
 }
