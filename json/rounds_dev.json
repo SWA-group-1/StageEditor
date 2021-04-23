@@ -14,11 +14,6 @@
 				"DeltaTime": 0.75
 			},
 			{
-				"EnemyType": "None",
-				"Count": 1,
-				"DeltaTime": 5.0
-			},
-			{
 				"EnemyType": "Basic",
 				"Count": 10,
 				"DeltaTime": 1.0
