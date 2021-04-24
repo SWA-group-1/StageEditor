@@ -29,7 +29,7 @@
       "Health": 1,
       "Name": "Fast 1",
       "NextType": "None",
-      "Speed": 2.5,
+      "Speed": 2.0,
       "SpriteNumber": 6
     },
     {
@@ -53,7 +53,7 @@
       "Health": 3,
       "Name": "Tanky 3",
       "NextType": "Tanky 2",
-      "Speed": 0.75,
+      "Speed": 1.0,
       "SpriteNumber": 11
     },
     {
@@ -61,7 +61,7 @@
       "Health": 2,
       "Name": "Tanky 2",
       "NextType": "Tanky 1",
-      "Speed": 0.75,
+      "Speed": 1.0,
       "SpriteNumber": 11
     },
     {
@@ -69,20 +69,12 @@
       "Health": 1,
       "Name": "Tanky 1",
       "NextType": "None",
-      "Speed": 0.75,
+      "Speed": 1.0,
       "SpriteNumber": 11
     },
     {
       "Camo": false,
       "Health": 3,
-      "Name": "Metal 3",
-      "NextType": "Metal 2",
-      "Speed": 1.0,
-      "SpriteNumber": 15
-    },
-    {
-      "Camo": false,
-      "Health": 2,
       "Name": "Metal 2",
       "NextType": "Metal 1",
       "Speed": 1.0,
@@ -90,9 +82,9 @@
     },
     {
       "Camo": false,
-      "Health": 1,
+      "Health": 2,
       "Name": "Metal 1",
-      "NextType": "None",
+      "NextType": "Fast 1",
       "Speed": 1.0,
       "SpriteNumber": 16
     }
