@@ -1,0 +1,16 @@
+{
+  "Stages": [
+    {
+      "Name": "City",
+      "Number": 0
+    },
+    {
+      "Name": "NTNU",
+      "Number": 1
+    },
+    {
+      "Name": "Samfundet",
+      "Number": 2
+    }
+  ]
+}
