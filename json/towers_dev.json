@@ -1,6 +1,7 @@
 {
 	"Towers": [
 		{
+      "CanSpotCamo": false,
 			"Description": "Antiviral Drug Doctor",
 			"MediumCost": 140,
 			"ProjectileSpeed": 10,
@@ -11,6 +12,7 @@
 			"TypeNumber": 0
 		},
 		{
+      "CanSpotCamo": false,
 			"Description": "Vaccine Nurse",
 			"MediumCost": 300,
 			"ProjectileSpeed": 10,
@@ -21,22 +23,24 @@
 			"TypeNumber": 1
 		},
 		{
+      "CanSpotCamo": false,
 			"Description": "Hand Sanitizer Dispenser",
-			"MediumCost": 400,
+			"MediumCost": 240,
 			"ProjectileSpeed": 8,
 			"ProjectileSpriteNumber": 105,
 			"Range": 4,
-			"ReloadTime": 2,
+			"ReloadTime": 1.5,
 			"TowerSpriteNumber": 104,
 			"TypeNumber": 2
 		},
 		{
+      "CanSpotCamo": true,
 			"Description": "Government",
-			"MediumCost": 400,
+			"MediumCost": 360,
 			"ProjectileSpeed": 10,
 			"ProjectileSpriteNumber": 107,
 			"Range": 6,
-			"ReloadTime": 1.25,
+			"ReloadTime": 1.5,
 			"TowerSpriteNumber": 106,
 			"TypeNumber": 3
 		}

@@ -1,6 +1,7 @@
 {
   "EnemyTypes": [
     {
+      "Camo": false,
       "Health": 1,
       "Name": "Basic",
       "NextType": "None",
@@ -8,6 +9,7 @@
       "SpriteNumber": 0
     },
     {
+      "Camo": true,
       "Health": 1,
       "Name": "Basic Camo",
       "NextType": "None",
@@ -15,6 +17,7 @@
       "SpriteNumber": 1
     },
     {
+      "Camo": false,
       "Health": 2,
       "Name": "Fast 2",
       "NextType": "Fast 1",
@@ -22,6 +25,7 @@
       "SpriteNumber": 5
     },
     {
+      "Camo": false,
       "Health": 1,
       "Name": "Fast 1",
       "NextType": "None",
@@ -29,6 +33,7 @@
       "SpriteNumber": 6
     },
     {
+      "Camo": false,
       "Health": 5,
       "Name": "Tanky 5",
       "NextType": "Tanky 4",
@@ -36,6 +41,7 @@
       "SpriteNumber": 10
     },
     {
+      "Camo": false,
       "Health": 4,
       "Name": "Tanky 4",
       "NextType": "Tanky 3",
@@ -43,6 +49,7 @@
       "SpriteNumber": 10
     },
     {
+      "Camo": false,
       "Health": 3,
       "Name": "Tanky 3",
       "NextType": "Tanky 2",
@@ -50,6 +57,7 @@
       "SpriteNumber": 11
     },
     {
+      "Camo": false,
       "Health": 2,
       "Name": "Tanky 2",
       "NextType": "Tanky 1",
@@ -57,6 +65,7 @@
       "SpriteNumber": 11
     },
     {
+      "Camo": false,
       "Health": 1,
       "Name": "Tanky 1",
       "NextType": "None",
@@ -64,6 +73,7 @@
       "SpriteNumber": 11
     },
     {
+      "Camo": false,
       "Health": 3,
       "Name": "Metal 3",
       "NextType": "Metal 2",
@@ -71,6 +81,7 @@
       "SpriteNumber": 15
     },
     {
+      "Camo": false,
       "Health": 2,
       "Name": "Metal 2",
       "NextType": "Metal 1",
@@ -78,7 +89,8 @@
       "SpriteNumber": 16
     },
     {
-      "Health": 2,
+      "Camo": false,
+      "Health": 1,
       "Name": "Metal 1",
       "NextType": "None",
       "Speed": 1.0,
