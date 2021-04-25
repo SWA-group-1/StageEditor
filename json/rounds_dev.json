@@ -38,11 +38,6 @@
         "DeltaTime": 1.0
       },
       {
-        "EnemyType": "None",
-        "Count": 1,
-        "DeltaTime": 2.5
-      },
-      {
         "EnemyType": "Fast 2",
         "Count": 30,
         "DeltaTime": 0.75
@@ -50,7 +45,34 @@
     ],
     [
       {
-        "EnemyType": "Metal 3",
+        "EnemyType": "Metal 2",
+        "Count": 1,
+        "DeltaTime": 1.0
+      },
+      {
+        "EnemyType": "None",
+        "Count": 1,
+        "DeltaTime": 2.5
+      },
+      {
+        "EnemyType": "Basic",
+        "Count": 30,
+        "DeltaTime": 1.0
+      },
+      {
+        "EnemyType": "None",
+        "Count": 1,
+        "DeltaTime": -29.5
+      },
+      {
+        "EnemyType": "Fast 2",
+        "Count": 15,
+        "DeltaTime": 2.0
+      }
+    ],
+    [
+      {
+        "EnemyType": "Basic Camo",
         "Count": 3,
         "DeltaTime": 1.0
       }
@@ -87,7 +109,7 @@
     [
       {
         "EnemyType": "Basic Camo",
-        "Count": 15,
+        "Count": 30,
         "DeltaTime": 0.5
       }
     ]
