@@ -3,7 +3,7 @@
 		{
       "CanSpotCamo": false,
 			"Description": "Antiviral Drug Doctor",
-			"MediumCost": 140,
+			"MediumCost": 125,
 			"ProjectileSpeed": 7.5,
 			"ProjectileSpriteNumber": 101,
 			"Range": 2,
@@ -14,7 +14,7 @@
 		{
       "CanSpotCamo": false,
 			"Description": "Vaccine Nurse",
-			"MediumCost": 300,
+			"MediumCost": 275,
 			"ProjectileSpeed": 7.5,
 			"ProjectileSpriteNumber": 103,
 			"Range": 2,
@@ -25,7 +25,7 @@
 		{
       "CanSpotCamo": false,
 			"Description": "Hand Sanitizer Dispenser",
-			"MediumCost": 240,
+			"MediumCost": 225,
 			"ProjectileSpeed": 7.5,
 			"ProjectileSpriteNumber": 105,
 			"Range": 4,
@@ -36,7 +36,7 @@
 		{
       "CanSpotCamo": true,
 			"Description": "Government",
-			"MediumCost": 360,
+			"MediumCost": 325,
 			"ProjectileSpeed": 7.5,
 			"ProjectileSpriteNumber": 107,
 			"Range": 6,
