@@ -112,6 +112,23 @@
         "Count": 30,
         "DeltaTime": 0.5
       }
+    ],
+    [
+      {
+        "EnemyType": "Metal 2",
+        "Count": 13,
+        "DeltaTime": 0.75
+      },
+      {
+        "EnemyType": "Fast 2",
+        "Count": 3,
+        "DeltaTime": 0.75
+      },
+      {
+        "EnemyType": "Metal 2",
+        "Count": 4,
+        "DeltaTime": 0.75
+      }
     ]
   ]
 }
